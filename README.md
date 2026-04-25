@@ -1,7 +1,35 @@
-# GitHub Codespaces ♥️ Ruby on Rails
+# Ruby on Rails チュートリアルのサンプルアプリケーション
 
-Welcome to your shiny new Codespace running Rails! We've got everything fired up and running for you to explore Rails.
+これは、次の教材で作られたサンプルアプリケーションです。
+[*Ruby on Rails チュートリアル*](https://railstutorial.jp/)
+（第7版）
+[Michael Hartl](https://www.michaelhartl.com/) 著
 
-You've got a blank canvas to work on from a git perspective as well. There's a single initial commit with what you're seeing right now - where you go from here is up to you!
+## ライセンス
 
-Everything you do here is contained within this one codespace. There is no repository on GitHub yet. If and when you’re ready you can click "Publish Branch" and we’ll create your repository and push up your project. If you were just exploring then and have no further need for this code then you can simply delete your codespace and it's gone forever.
+[Ruby on Rails チュートリアル](https://railstutorial.jp/)内にある
+ソースコードはMITライセンスとBeerwareライセンスのもとで公開されています。
+詳細は [LICENSE.md](LICENSE.md) をご覧ください。
+
+## 使い方
+
+このアプリケーションを動かす場合は、まずはリポジトリをフォークしてください。
+
+フォークしたリポジトリで、「Code」から「Codespaces」タブに移動し、
+「Create codespace on main」をクリックすると環境構築がスタートします。
+Railsサーバーが立ち上がり、シンプルブラウザが表示されるまでしばらくお待ちください。
+
+次に、データベースへのマイグレーションを実行します。
+
+```
+$ rails db:migrate
+```
+
+最後に、テストを実行してうまく動いているかどうか確認してください。
+
+```
+$ rails test
+```
+
+詳しくは、[*Ruby on Rails チュートリアル*](https://railstutorial.jp/)
+を参考にしてください。
