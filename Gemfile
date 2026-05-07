@@ -7,6 +7,7 @@ ruby "~> 3.4.0"
 gem "rails", "~> 8.1.0"
 
 gem "bcrypt", "3.1.18"
+gem "bootstrap-sass",  "3.4.1"
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 
@@ -73,4 +74,8 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
   gem "webdrivers"
+
+  # Rails 5+ で `assert_template` などの controller testing が分離されたため。
+  # railstutorial の integration test で `assert_template` を使う場合に必要。
+  gem "rails-controller-testing"
 end
