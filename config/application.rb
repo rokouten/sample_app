@@ -18,5 +18,9 @@ module CodespacesTryRails
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+
+    # Render(本番)では eager load が走るため、`app/**/*_test.rb` が紛れ込むと
+    # Zeitwerk が定数不一致で起動失敗します。誤配置ファイルは autoload/eager_load から除外します。
+    config.autoload_lib(ignore: [Rails.root.join("app", "**", "*_test.rb")])
   end
 end
