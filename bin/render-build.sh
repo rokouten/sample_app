@@ -1,13 +1,8 @@
 #!/usr/bin/env bash
+# exit on error
 set -o errexit
-
-# Render build phase script
-# - installs gems
-# - precompiles assets
-# Note: DB migration is intentionally NOT run here because Render build phase
-# may not have access to your production database.
-
 bundle install
 bundle exec rails assets:precompile
 bundle exec rails assets:clean
-
+DISABLE_DATABASE_ENVIRONMENT_CHECK=1 bundle exec rails db:migrate:reset
+bundle exec rails db:seed
