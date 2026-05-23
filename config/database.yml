@@ -22,4 +22,7 @@ test:
 
 production:
   <<: *default
-  database: db/production.sqlite3
+  # Render等でSQLiteを使う場合、エフェメラルFSだと再デプロイ/再起動でDBが消えます。
+  # 永続ディスクをマウントしている場合は SQLITE_DATABASE をそのパスに設定してください。
+  # 例) /var/data/production.sqlite3
+  database: <%= ENV.fetch("SQLITE_DATABASE") { "db/production.sqlite3" } %>
