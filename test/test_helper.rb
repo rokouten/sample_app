@@ -4,7 +4,7 @@ require "rails/test_help"
 
 class ActiveSupport::TestCase
   # 指定のワーカー数でテストを並列実行する
-  parallelize(workers: :number_of_processors)
+  parallelize(workers: 1)
   # test/fixtures/*.ymlのfixtureをすべてセットアップする
   fixtures :all
   include ApplicationHelper
